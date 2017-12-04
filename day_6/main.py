@@ -15,7 +15,7 @@
 import webapp2
 
 form="""
-<form action="post">
+<form method="post">
 	What is your birthday?
 	<br>
 	<label> Day
@@ -35,13 +35,10 @@ form="""
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        #self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write(form)
 
-    #def post(self):
-    #	self.response.out.write("Thanks!")
+    def post(self):
+    	self.response.out.write("Thanks!")
 
 
-app = webapp2.WSGIApplication([
-    ('/', MainPage),
-], debug=True)
+app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
