@@ -1,0 +1,6 @@
+What if I want to talk about &lt;html&gt; in <b>html</b>?
+
+def escape_html(s):
+	cgi.escape(s, quote=True)
+
+print escape_html('"hello, & -&amp;"')
